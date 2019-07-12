@@ -7,5 +7,7 @@ public interface Persona {
 	public String getDatos(PersonaImpl per);
 	
 	public String modificar(PersonaImpl per, String nuevoNombre);
+	
+	public PersonaImpl getPersona(PersonaImpl per);
 	 
 }

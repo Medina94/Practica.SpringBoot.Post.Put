@@ -46,6 +46,15 @@ public class PersonaImpl implements Persona{
 		per.setNombre(nuevoNombre);
 		return "nombre: "+per.getNombre()+", apellido: "+per.getApellido()+", direc: "+per.getDireccion();
 	}
+	@Override
+	public PersonaImpl getPersona(PersonaImpl per) {
+		PersonaImpl p = new PersonaImpl();
+		p.setNombre(per.getNombre());
+		p.setApellido(per.getApellido());
+		p.setDni(per.getDni());
+		p.setDireccion(per.getDireccion());
+		return p;
+	}
 	
 	
 }

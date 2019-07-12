@@ -16,11 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controlador {
 	@Autowired
 	private Servicio servicio;
+	@Autowired
+	private ServicioUsuario userService;
 	
+	//---------------------------------------------------------------------------------------------------------------
+	//SERVICIOS PERSONA
 	@PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 	public String traerServicio(@RequestBody PersonaImpl per) {
 		return servicio.traerDatos(per);
-	}
+	} 
 	
 	@RequestMapping("/update")
 	@PutMapping(consumes = {MediaType.APPLICATION_PROBLEM_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -28,9 +32,17 @@ public class Controlador {
 		return servicio.traerModificado(per, nuevoNombre);
 	}
 	
-	@RequestMapping("/delete")
+	/*@RequestMapping("/delete")
 	@DeleteMapping(consumes = {MediaType.APPLICATION_PROBLEM_JSON_VALUE})
 	public String eliminarDato(@RequestBody PersonaImpl per) {
 		return null;
+	}*/
+	
+	//--------------------------------------------------------------------------------------------------------------
+	//SERVICIOS USUARIO
+	@RequestMapping("/user")
+	@PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+	public UsuarioImpl CreateUser(@RequestBody PersonaImpl per) {
+		return userService.traerUsuario(per);
 	}
 }

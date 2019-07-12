@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 public class UsuarioImpl implements Usuario{
 	@Autowired
 	private Persona persona;
-	//private String id;
+	private String id;
 	//-------------------------------------------------------------------------------------------------------
 	public Persona getPersona() {
 		return persona;

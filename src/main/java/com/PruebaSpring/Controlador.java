@@ -36,7 +36,7 @@ public class Controlador {
 	@DeleteMapping(consumes = {MediaType.APPLICATION_PROBLEM_JSON_VALUE})
 	public String eliminarDato(@RequestBody PersonaImpl per) {
 		return null;
-	}*/
+	}*/	
 	
 	//--------------------------------------------------------------------------------------------------------------
 	//SERVICIOS USUARIO
